@@ -7,6 +7,15 @@ User.create!(name:  "Example User",
              activated: true,
              activated_at: Time.zone.now)
 
+#サブのサンプルユーザーを作成する
+User.create!(name:  "Makiko",
+             email: "yokomakiko@icloud.com",
+             password:              "1010yoko",
+             password_confirmation: "1010yoko",
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
+
 # 追加のユーザーをまとめて生成する
 99.times do |n|
   name  = Faker::Name.name
