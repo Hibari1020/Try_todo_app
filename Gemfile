@@ -38,6 +38,7 @@ group :test do
   gem "minitest-reporters",       "1.6.0"
   gem "guard",                    "2.18.0"
   gem "guard-minitest",           "2.4.6"
+  gem 'byebug'
 end
 
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
