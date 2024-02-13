@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
-  get 'password_resets/edit'
   root "static_pages#start"
   get '/signup', to: "users#new"
   get "/login", to: "sessions#new"
@@ -9,4 +7,12 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :microposts,  only: [:create] do
+    member do
+      post 'update_done'
+      post 'update_not_done'
+    end
+  end
+  get '/microposts', to: "static_pages#start"
+  get "/microposts_done_list", to: "microposts#done_index", as: "done_index"
 end

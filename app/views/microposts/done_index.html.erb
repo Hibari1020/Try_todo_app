@@ -1,0 +1,9 @@
+ <h1>Done list</h1>
+ <span><%= pluralize(current_user.microposts.where(done: true).count, "micropost") %></span>
+<% if @done_feed_items.any? %>
+  <ol class="microposts">
+    <%= render @done_feed_items %>
+  </ol>
+  <%= will_paginate @done_feed_items,
+                    params: { controller: :Microposts, action: :done_index } %>
+<% end %>
