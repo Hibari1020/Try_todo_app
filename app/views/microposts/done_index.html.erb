@@ -1,5 +1,5 @@
  <h1>Done list</h1>
- <span><%= pluralize(current_user.microposts.where(done: true).count, "micropost") %></span>
+ <span><%= pluralize(current_user.microposts.where(done: true).count, "task") %></span>
 <% if @done_feed_items.any? %>
   <ol class="microposts">
     <%= render @done_feed_items %>
