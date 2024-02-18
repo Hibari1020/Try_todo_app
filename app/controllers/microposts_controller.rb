@@ -44,7 +44,8 @@ class MicropostsController < ApplicationController
     end
       
     def update_not_share
-      if @micropost.shared = false
+      @micropost.shared = false
+      if @micropost.save
         flash[:success] = "Micropost is not shared"
         redirect_to root_url, status: :see_other
       else
